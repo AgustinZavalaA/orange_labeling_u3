@@ -117,6 +117,6 @@ def main(process_video: bool = True, video_path: str = "dataset/lento_1.MOV", si
 
 if __name__ == "__main__":
     main(
-        process_video=False,
+        process_video=True,
         video_path="dataset/lento_1.MOV",
     )
