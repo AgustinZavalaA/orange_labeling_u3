@@ -1,4 +1,4 @@
-dataset/
+dataset/*.MOV
 __pycache__/
 
 models.pkl
