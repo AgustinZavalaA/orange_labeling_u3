@@ -6,6 +6,8 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.neural_network import MLPClassifier
 from sklearn.ensemble import AdaBoostClassifier
 from sklearn.svm import SVC
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import confusion_matrix
 import pickle
 from collections import defaultdict
 
@@ -177,6 +179,8 @@ def train_models(video_paths: list[str], read_from_disk: bool = False, size: int
         for classifier in model:
             print(f"{classifier}")
             print(classifier.score(image_features, labels[:, i]))
+            print(accuracy_score(labels[:, i], classifier.predict(image_features)))
+            print(confusion_matrix(labels[:, i], classifier.predict(image_features)))
 
 
 def evaluate_video(video_path: str, size: int = 256) -> None:
